@@ -7,6 +7,6 @@ for i in range(N):
             ni , nj = i +dj, j+dj
             if 0<= ni <N and 0<= nj <N:
                 total += abs(arr[ni][nj]-arr[i][j])
-print(total
+print(total)
 
 #
