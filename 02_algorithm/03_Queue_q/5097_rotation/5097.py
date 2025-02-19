@@ -18,3 +18,5 @@ for tc in range(1, T+1):
     for i in range(M):
         point = arr[(i+1)%N]
     print(f'#{tc} {point}')
+
+    #print(f'#{tc} {arr[M%N]}') #hmmhmm
