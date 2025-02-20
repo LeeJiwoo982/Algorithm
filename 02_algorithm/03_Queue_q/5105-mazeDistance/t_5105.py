@@ -8,7 +8,7 @@ def bfs(i, j, N):
     while q:
         ti, tj = q.pop(0)   # 디큐
         if maze[ti][tj] == 3:   # visit(t)
-            return visited[ti][tj] - 1 - 1 # 경로의 빈칸 수, -1 추가
+            return visited[ti][tj] - 1 # 경로의 빈칸 수, -1 추가
         for di, dj in [[0,1],[1,0],[0,-1],[-1,0]]: # 미로내부고, 인접이고 벽이아니면,
             wi, wj = ti+di, tj+dj
             if 0<=wi<N and 0<=wj<N and maze[wi][wj] != 1 and visited[wi][wj] == 0:
