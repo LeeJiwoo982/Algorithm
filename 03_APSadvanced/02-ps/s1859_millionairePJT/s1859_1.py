@@ -39,3 +39,4 @@ for tc in range(1, T+1):
                 gain += prices[i]*items
                 items = 0   #물건을 다 팔아서 0으로 초기화
     print(f'#{tc} {gain}')
+    # 가격이 최대일 때, 그다음 최대일때, 그다음 최대일 때 판매해야 최대 이익
