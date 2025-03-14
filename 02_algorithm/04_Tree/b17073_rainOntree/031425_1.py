@@ -1,3 +1,7 @@
+from sys import stdin
+def input():
+    return stdin.readline().rstrip()
+
 N, W = map(int, input().split())
 
 # 그래프 생성. 간선의 정보라 어떤게 부모고 자식인지 알 수 없음
