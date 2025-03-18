@@ -13,5 +13,26 @@ sys.stdin = open('sample_input.txt', 'r')
 
 T = int(input())
 
+def min_swaps_back(N, M):
+    '''충전지 최소한으로 교환해서 목적지 도달하기 함수'''
+    global min_swaps
+    min_swaps = float('inf')
+    backtrack(0, 0, M[0])   #현재위치, 교환횟수, 충전지위치로 충전이후 이동거리
+    return min_swaps
+
+def backtrack(now, swaps, charge):  #현재위치, 교환횟수, 충전지위치로 충전이후 이동거리
+    global min_swaps
+    # 목적지 도달 시 최소 교환 횟수 갱신
+    if now >= N - 1:    #현재위치가 목적지 도착 이상일때(완료조건)
+        min_swaps = min(min_swaps, swaps)
+        return 
+    
+    # 현재 충전량으로 이동 가능한 범위 내의 모든 정류장 탐색
+    for next_pos in range(now + 1, min(N, now + charge + 1)):   #목적지 vs 현재위치+충전거리
+        backtrack(next_pos, swaps + 1, M[next_pos - 1]) #재귀
+
 for tc in range(1, T+1):
     N, *M = map(int, input().split())
+
+    result = min_swaps_back(N, M)
+    print(f'#{tc} {result}')
