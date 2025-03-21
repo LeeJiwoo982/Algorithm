@@ -8,7 +8,7 @@ def similar_2dishes(r, dif):    # 재료, 차이
 
     # 종료조건
 
-
+    pass
 
 
 for tc in range(1, T+1):
